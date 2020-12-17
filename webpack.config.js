@@ -1,6 +1,7 @@
 const { resolve } = require('path');
-
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const { TsConfigPathsPlugin } = require('awesome-typescript-loader');
+
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
 const config = {
@@ -33,6 +34,7 @@ const config = {
         ],
     },
     resolve: {
+        plugins: [new TsConfigPathsPlugin()],
         extensions: ['.js', '.ts', '.tsx'],
     },
     plugins: [
