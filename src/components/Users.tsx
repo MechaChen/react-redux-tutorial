@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Card from '@components/Card';
-import { getUsers } from '@redux/actions/users';
+import { getUsersAsync } from '@redux/actions/users';
 import { I_User } from '@redux/reducers/users';
 
 const tempUsers: I_User[] = [
@@ -37,7 +37,7 @@ const Users = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getUsers(tempUsers));
+        dispatch(getUsersAsync());
     }, []);
 
     return (
